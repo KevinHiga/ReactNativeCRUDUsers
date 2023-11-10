@@ -1,7 +1,17 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
-
+En los codigo que implica el fetch como ejemplo
+  const deleteCity = async () => {
+    fetch("http://192.168.1.40:6000/city/" + city.key, {
+        method: 'DELETE'
+    }).then((response) => response.json())
+    .then((responseData) => {
+        setTemp(city)
+    })
+    props.navigation.goBack();
+  };
+modificar la ip http://192.168.1.40 por la ipv4 de la cual se esta ejecutando el Back end
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
 ## Step 1: Start the Metro Server
